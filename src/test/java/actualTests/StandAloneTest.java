@@ -15,7 +15,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObjects.LandingPage;
 
 public class StandAloneTest {
-
+	//added comment here
 	public static void main(String[] args) {
 
 		String productName = "ZARA COAT 3";
