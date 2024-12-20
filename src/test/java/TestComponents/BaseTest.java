@@ -35,32 +35,34 @@ public class BaseTest {
 
 	public WebDriver initilizeDriver() throws IOException {
 
-		Properties prop = new Properties();
-		FileInputStream fileInput = new FileInputStream(
-				System.getProperty("user.dir") + "/src/main/java/resources/GlobalData.properties");
-		prop.load(fileInput);
+		// Properties prop = new Properties();
+		// FileInputStream fileInput = new FileInputStream(
+		// 		System.getProperty("user.dir") + "/src/main/java/resources/GlobalData.properties");
+		// prop.load(fileInput);
 
-		String browserName = System.getProperty("browser") != null ? System.getProperty("browser")
-				: prop.getProperty("browser");
+		// String browserName = System.getProperty("browser") != null ? System.getProperty("browser")
+		// 		: prop.getProperty("browser");
 
-		if (browserName.contains("chrome")) {
+		// if (browserName.contains("chrome")) {
 
-			ChromeOptions options = new ChromeOptions();
+		// 	ChromeOptions options = new ChromeOptions();
 
-			WebDriverManager.chromedriver().setup();
+		// 	WebDriverManager.chromedriver().setup();
 
-			if (browserName.contains("headless")) {
-				options.addArguments("headless");
-			}
-			driver = new ChromeDriver(options);
-			driver.manage().window().setSize(new Dimension(1440, 900));
+		// 	if (browserName.contains("headless")) {
+		// 		options.addArguments("headless");
+		// 	}
+		// 	driver = new ChromeDriver(options);
+		// 	driver.manage().window().setSize(new Dimension(1440, 900));
 
-		} else if (browserName.equalsIgnoreCase("firefox")) {
-			driver = new FirefoxDriver();
-		} else if (browserName.equalsIgnoreCase("safari")) {
-			driver = new SafariDriver();
-		}
+		// } else if (browserName.equalsIgnoreCase("firefox")) {
+		// 	driver = new FirefoxDriver();
+		// } else if (browserName.equalsIgnoreCase("safari")) {
+		// 	driver = new SafariDriver();
+		// }
 
+		driver = new ChromeDriver();
+	
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().window().maximize();
 		return driver;
